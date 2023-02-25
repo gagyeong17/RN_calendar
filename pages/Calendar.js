@@ -105,9 +105,9 @@ export default function Calendar({ navigation }) {
           <View style={styles.days}>
             {week.map((item, idx) =>
               week[idx] == "Sun" ? (
-                <Text style={[styles.day, { color: "red" }]}>{item}</Text>
+                <Text style={[styles.day, { color: "#9E1030" }]}>{item}</Text>
               ) : week[idx] == "Sat" ? (
-                <Text style={[styles.day, { color: "blue" }]}>{item}</Text>
+                <Text style={[styles.day, { color: "#0063B2" }]}>{item}</Text>
               ) : (
                 <Text style={styles.day} key={idx}>
                   {item}
@@ -140,8 +140,7 @@ export default function Calendar({ navigation }) {
                     </TouchableOpacity>
                   )
                 ) : (
-                  <TouchableOpacity
-                    onPress={() => handleDatePress(item)}
+                  <View
                     style={[
                       styles.date,
                       getDayStyle(item),
@@ -149,7 +148,7 @@ export default function Calendar({ navigation }) {
                     ]}
                   >
                     <Text style={styles.prevTxt}>{item}</Text>
-                  </TouchableOpacity>
+                  </View>
                 )
               )}
               renderItem={({ item }) => (
