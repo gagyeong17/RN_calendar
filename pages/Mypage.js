@@ -1,12 +1,17 @@
-import { View, Text, Button } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 export default function Mypage({ navigation }) {
   return (
-    <View>
-      <Button
-        title="Go to Mypage"
-        onPress={() => navigation.navigate("Home")}
-      />
+    <View style={styles.wrap}>
+      <Text>My page</Text>
     </View>
   );
 }
+const styles = StyleSheet.create({
+  wrap: {
+    alignItems: "center",
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "#fff",
+  },
+});
