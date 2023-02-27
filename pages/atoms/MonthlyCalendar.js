@@ -1,48 +1,3 @@
-// import React from "react";
-// import {
-//   Pressable,
-//   Animated,
-// } from "react-native";
-
-// import WeekCalendar from "./atoms/WeekCalendar";
-// import MonthlyCalendar from "./atoms/MonthlyCalendar";
-
-// //라이브러리
-// import {
-//   Swipeable,
-//   GestureHandlerRootView,
-// } from "react-native-gesture-handler";
-
-// export default function Calendar({ navigation }) {
-//   const renderRightActions = (dragX) => {
-//     const trans = dragX.interpolate({
-//       inputRange: [0, 50, 100, 101],
-//       outputRange: [-20, 0, 0, 1],
-//     });
-//     return (
-//       <Pressable>
-//         <Animated.View
-//           style={[
-//             // styles.delete,
-//             {
-//               transform: [{ translateX: trans }],
-//             },
-//           ]}
-//         >
-//           <MonthlyCalendar />
-//         </Animated.View>
-//       </Pressable>
-//     );
-//   };
-//   return (
-//     <GestureHandlerRootView>
-//       <Swipeable renderRightActions={(dragX) => renderRightActions(dragX)}>
-//         <WeekCalendar />
-//       </Swipeable>
-//     </GestureHandlerRootView>
-//   );
-// }
-
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -51,9 +6,9 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import WeekCalendar from "./atoms/WeekCalendar";
+// import WeekCalendar from "./atoms/WeekCalendar";
 
-export default function Calendar({ navigation }) {
+export default function MonthlyCalendar({ navigation }) {
   const week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const today = new Date();
   const viewYear = today.getFullYear(); //년도
@@ -212,7 +167,7 @@ export default function Calendar({ navigation }) {
               keyExtractor={(item, index) => index}
             />
           </View>
-          <WeekCalendar />
+          {/* <WeekCalendar /> */}
         </View>
       </View>
     </View>
