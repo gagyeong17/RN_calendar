@@ -1,22 +1,59 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { FontAwesome, Entypo } from "@expo/vector-icons";
-
+//pages
 import Home from "./pages/Home";
 import Calendar from "./pages/Calendar";
 import Library from "./pages/Library";
 import Mypage from "./pages/Mypage";
+//icons
+import { Entypo } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
 function BottomTabNavigator() {
   return (
     <BottomTab.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Calendar" component={Calendar} />
-      <Stack.Screen name="Library" component={Library} />
-      <Stack.Screen name="Mypage" component={Mypage} />
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: () => <Entypo name="home" size={24} color="black" />,
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Calendar"
+        component={Calendar}
+        options={{
+          tabBarIcon: () => (
+            <FontAwesome name="calendar" size={24} color="black" />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Library"
+        component={Library}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="library-outline" size={24} color="black" />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Mypage"
+        component={Mypage}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons name="person-outline" size={24} color="black" />
+          ),
+          headerShown: false,
+        }}
+      />
     </BottomTab.Navigator>
   );
 }
@@ -34,13 +71,6 @@ function RootNavigator() {
 export default function Navigation() {
   return (
     <NavigationContainer>
-      {/* initialRouteName="Home" */}
-      {/* <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Calendar" component={Calendar} />
-        <Stack.Screen name="Library" component={Library} />
-        <Stack.Screen name="Mypage" component={Mypage} />
-      </Stack.Navigator> */}
       <RootNavigator />
     </NavigationContainer>
   );
