@@ -86,7 +86,7 @@ export default function Calendar({ navigation }) {
   }
   // 이번 달 달력에 보이는 날짜들
   const dates = prevDates.concat(thisDates, nextDates);
-  //달력에서 이번달 날짜만 진하게 하기 위한 로~즥
+  //달력에서 이번달 날짜만 진하게 하기 위한 로직
   const firstDateIndex = dates.indexOf(1); //이번달 1일의 인덱스값
   const lastDateIndex = dates.lastIndexOf(TLDate); //이번달의 마지막 날 인덱스값
 
